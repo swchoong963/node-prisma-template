@@ -39,8 +39,9 @@ WORKDIR /home/app/
 
 # chmod for tmp is for a buildkit issue (@alexellis)
 RUN chown app:app -R /home/app \
-    && chmod 777 /tmp \
-    && chmod -R 777 /usr/
+    && chmod 777 /tmp
+    
+RUN prisma2 init
 
 USER root
 
