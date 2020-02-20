@@ -1,0 +1,2 @@
+language: node10-prisma
+fprocess: node index.js
