@@ -5,9 +5,6 @@ FROM node:12 as ship
 COPY --from=watchdog /fwatchdog /usr/bin/fwatchdog
 RUN chmod +x /usr/bin/fwatchdog
 
-RUN apk --no-cache add curl ca-certificates \
-    && addgroup -S app && adduser -S -g app app
-
 WORKDIR /root/
 
 # Turn down the verbosity to default level.
@@ -40,8 +37,6 @@ WORKDIR /home/app/
 # chmod for tmp is for a buildkit issue (@alexellis)
 RUN chown app:app -R /home/app \
     && chmod 777 /tmp
-    
-RUN prisma2 init
 
 USER root
 
