@@ -42,7 +42,7 @@ RUN chown app:app -R /home/app \
     && chmod 777 /tmp \
     && chmod -R 777 /usr/
 
-USER app
+USER root
 
 ENV cgi_headers="true"
 ENV fprocess="node index.js"
