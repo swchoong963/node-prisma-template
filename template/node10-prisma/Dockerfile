@@ -9,7 +9,7 @@ WORKDIR /root/
 
 # Turn down the verbosity to default level.
 ENV NPM_CONFIG_LOGLEVEL warn
-RUN npm i -g prisma2
+RUN npm i -g @prisma/cli
 RUN mkdir -p /home/app
 
 # Wrapper/boot-strapper
